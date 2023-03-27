@@ -1,15 +1,14 @@
 #include <iostream>
-using namespace std;
-
-
+#include "Musician.h"
 int main() {
- int array[]= {1,2,3,4};
-
-int n=4;
-
-extern int array_sum(int array[], int n);
+Musician m1;
+std::cout << "Default instrument: " << m1.get_instrument() << ", Default experience: " << m1.get_experience() << std::endl;
 
 
- cout << "sum=  " << array_sum (array,n)<< endl;
-    return 0;
+Musician m2("guitar", 5);
+
+std::cout << "Instrument: " << m2.get_instrument() << ", Experience: " <<
+
+m2.get_experience() << std::endl;
+return 0;
 }
