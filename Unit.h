@@ -5,8 +5,8 @@ class Unit
 {
 public:
 Unit();
-Unit(int,double,int);
-int get_bedrooms();
+Unit(int unit_val,double unit_size,int num_beds);
+int get_num_bedrooms();
 int get_value();
 double get_area();
 void set_bedrooms(int);

@@ -12,7 +12,7 @@ number_of_bedrooms=bedrooms;
 area=Area;
 value=Value;
 }
-int Unit::get_bedrooms()
+int Unit::get_num_bedrooms()
 {
 return number_of_bedrooms;
 }
