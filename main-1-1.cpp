@@ -1,14 +1,14 @@
 #include <iostream>
-#include "Musician.h"
+#include "Unit.h"
 int main() {
-Musician m1;
-std::cout << "Default instrument: " << m1.get_instrument() << ", Default experience: " << m1.get_experience() << std::endl;
 
+Unit unit; //shows default constuctor
+cout<<"The number of bedrooms:"<<unit.get_bedrooms()<<endl;
+cout<<"The value is $"<<unit.get_value()<<endl;
+cout<<"The number of square meters is:"<<unit.get_area()<<endl;
 
-Musician m2("guitar", 5);
-
-std::cout << "Instrument: " << m2.get_instrument() << ", Experience: " <<
-
-m2.get_experience() << std::endl;
-return 0;
+Unit unit1(4,500,100000);
+cout<<"The number of bedrooms:"<<unit1.get_bedrooms()<<endl;
+cout<<"The value is $"<<unit1.get_value()<<endl;
+cout<<"The number of square meters is:"<<unit1.get_area()<<endl;
 }
