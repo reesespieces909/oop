@@ -1,3 +1,5 @@
+#ifndef _Unit_H
+#define _Unit_H
 #include <iostream>
 using namespace std;
 
@@ -17,5 +19,6 @@ int number_of_bedrooms;
 double area;
 int value;
 };
+#endif
 
 
