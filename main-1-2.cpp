@@ -5,9 +5,9 @@ int main()
 {
 	
 	ApartmentBuilding ApartmentBuilding(4);
-	ApartmentBuilding.add_unit(Unit(2, 56.78, 231));
-	ApartmentBuilding.add_unit(Unit(4, 456.78, 2345));
-	ApartmentBuilding.add_unit(Unit(5, 678.90, 1234));
+	ApartmentBuilding.add_unit(Unit(6, 61.44, 145));
+	ApartmentBuilding.add_unit(Unit(4, 124.54, 890));
+	ApartmentBuilding.add_unit(Unit(2, 435.65, 3426));
 	
 
 	cout << "ApartmentBuilding Capacity: " << ApartmentBuilding.get_capacity()<<endl;
