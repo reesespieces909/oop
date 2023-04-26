@@ -1,10 +1,12 @@
 #include <iostream>
-using namespace std;
+#include "Fridge.h"
 
-int main(){
-    int array[] = {18,11,16,21};
-    int n = 4;
-extern int min_element(int array[], int n);
-cout << "Smallest number is: " << min_element(array, n) << endl;
-return 0;
+int main() {
+   Fridge fridge(100, 200.0);
+   fridge.turnOn();
+   std::cout << "Fridge power consumption: " << fridge.getPowerConsumption() << " watts\n";
+   fridge.setVolume(250.0);
+   std::cout << "Fridge volume: " << fridge.getVolume() << " liters\n";
+   fridge.turnOff();
+   return 0;
 }
