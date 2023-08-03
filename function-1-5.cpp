@@ -1,18 +1,20 @@
 #include <iostream>
 using namespace std;
+void print_summed_matrices(int array1[3][3],int array2[3][3])
+{
 
-int count_evens(int number){
+for(int i=0; i<3; i++){
 
-    int evens=0;
-    int n;
-   for (int i = 0; i<5 ; i++) {
-   if(i%2==0)
-    evens++;
-    
-  if (n<1)
-  return 0;
- }
-    return evens++;
-   
+for(int j=0; j<3; j++)
 
-   }
+{
+
+cout << array1[i][j]+array2[i][j] << " ";
+
+}
+
+cout << endl;
+
+}
+
+}

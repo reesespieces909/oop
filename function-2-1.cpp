@@ -1,19 +1,15 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
-int min_element(int array[], int n){
-int smallest= array[0];
-    
-   for (int i = 0; i<n ; i++) {
-   if(smallest>array[i])
-  smallest=array[i];
-   
-  if (n<1)
-  return 0;
-   }
-   return smallest;
-    
-   }
-   
+void print_binary_str(std::string decimal_number) {
+        int num = stoi(decimal_number);
 
-   
+        string s = "";
+        while(num != 0) {
+                s = (char)('0' + (num%2)) + s;
+                num = num / 2;
+        
+        return ;
+        }  
+}

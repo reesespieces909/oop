@@ -1,15 +1,8 @@
+#include <stdio.h>
 #include <iostream>
-using namespace std;
-
-
-int main() {
- int array[]= {10,10,10,10};
- int secondarray[]= {1,1,1,1};
-int n=4;
-
-extern int sum_two_arrays(int array[], int secondarray[], int n);
-
-
- cout << "Sum of arrays are =  " << sum_two_arrays(array, secondarray, n)<< endl;
-    return 0;
+int main(){
+    extern void print_scaled(int array[3][3], int scale);
+int scale = 3;
+int threebythree[3][3] = {{0,1,2},{3,4,5},{6,7,8}};
+print_scaled(threebythree, scale);
 }

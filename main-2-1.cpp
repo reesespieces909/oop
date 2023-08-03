@@ -1,10 +1,12 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int main(){
-    int array[] = {18,11,16,21};
-    int n = 4;
-extern int min_element(int array[], int n);
-cout << "Smallest number is: " << min_element(array, n) << endl;
-return 0;
+std::string decimal_number;
+    extern void print_binary_str(std::string decimal_number);
+        
+        cout << "  " << print_binary_str(decimal_number) << endl;
+        
+        return 0;
 }

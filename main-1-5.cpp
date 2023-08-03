@@ -1,12 +1,15 @@
+
 #include <iostream>
 using namespace std;
 
-int main (){
-int number = 0;
- 
+int main(){
+   
 
-extern int count_evens(int number);
+int array1[3][3] = {{0,1,2},{3,4,5},{6,7,8}} ;
 
-cout << "Number of even numbers between 1 and n: " << count_evens(number) << endl;
-return 0;
+int array2[3][3] = {{0,0,0},{2,2,2},{-5,-4,8}} ;
+extern void print_summed_matrices(int array1[3][3],int array2[3][3]);
+
+cout << " "  << print_summed_matrices (array1,array2) << endl ;
+
 }

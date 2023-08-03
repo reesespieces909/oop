@@ -1,15 +1,27 @@
 #include <iostream>
 using namespace std;
-double array_mean(int array[], int n){
 
-    
-    double total=0;
-   for (int i = 0; i<n ; i++) {
-    total=(total+array[i]);
-    
-  if (n<1)
-  return 0;
- }
-    return total/n;
-   
+int is_identity(int array[10][10]){
+
+for(int i=0; i<10; i++){
+
+for(int j=0; j<10; j++){
+
+if(i==j){
+
+if(array[i][j] != 1)
+
+return 0; 
+}
+
+else {
+
+if(array[i][j] != 0)
+
+return 0;
+}
+}
+}
+
+return 1;
 }

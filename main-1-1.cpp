@@ -1,14 +1,10 @@
 #include <iostream>
-#include "Musician.h"
+using namespace std;
+
 int main() {
-Musician m1;
-std::cout << "Default instrument: " << m1.get_instrument() << ", Default experience: " << m1.get_experience() << std::endl;
+ int array[4][4]= {{1, 2, 3, 4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}};
+extern int sum_diagonal(int array[4][4]);
 
-
-Musician m2("guitar", 5);
-
-std::cout << "Instrument: " << m2.get_instrument() << ", Experience: " <<
-
-m2.get_experience() << std::endl;
-return 0;
+cout << "The sum of the diagonals are =  " << sum_diagonal (array)<< endl;
+    return 0;
 }

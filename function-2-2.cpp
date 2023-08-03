@@ -1,17 +1,13 @@
 #include <iostream>
+
 using namespace std;
 
-int max_element(int array[], int n){
-int biggest= array[0];
-    
-   for (int i = 0; i<n ; i++) {
-   if(biggest<array[i])
-  biggest=array[i];
-   
-  if (n<1)
-  return 0;
-   }
-   return biggest;
-    
-   }
-   
+int bin_to_int(int binary_digits[], int number_of_digits)
+{
+int number;
+for(int i=0; i<number_of_digits; i++)
+{
+number = number | (binary_digits[i] << i);
+}
+return number;
+}
