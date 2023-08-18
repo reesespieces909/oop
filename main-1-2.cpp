@@ -1,11 +1,19 @@
 #include <iostream>
-using namespace std;
+#include "Person.h"
 
 int main() {
- int array[10][10]= {{1, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 1, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 1, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 1, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 1, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 1, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},{0, 0, 0, 0, 0, 0, 0, 0, 1, 0},{0, 0, 0, 0, 0, 0, 0, 0, 0, 1},};
-extern int is_identity(int array[10][10]);
+    int n;
+    std::cout << "Enter the number of persons: ";
+    std::cin >> n;
 
-cout << "  " << is_identity (array)<< endl;
+    PersonList personList = createPersonList(n);
+
+    std::cout << "Created a PersonList with " << personList.numPeople << " people:" << std::endl;
+    for (int i = 0; i < personList.numPeople; ++i) {
+        std::cout << "Person " << i + 1 << ": Name = " << personList.people[i].name << ", Age = " << personList.people[i].age << std::endl;
+    }
+
+    delete[] personList.people;
+
     return 0;
 }
-
