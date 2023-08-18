@@ -1,17 +1,10 @@
-#include <iostream>
-using namespace std;
+#include "Person.h"
 
-int sum_diagonal(int array[4][4]){
-
-
-
-int diagTotal=0;
-int i;
-
-for ( i= 0; i<4; ++i)
-
-diagTotal = diagTotal + array[i][i];
-
-return diagTotal;
-
+Person* createPersonArray(int n) {
+    Person* arr = new Person[n];
+    for (int i = 0; i < n; ++i) {
+        arr[i].name = "John Doe";
+        arr[i].age = 0;
+    }
+    return arr;
 }

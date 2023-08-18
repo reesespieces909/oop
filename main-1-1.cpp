@@ -1,10 +1,20 @@
 #include <iostream>
-using namespace std;
+#include "Person.h"
+#include "function-1-1.cpp"
 
 int main() {
- int array[4][4]= {{1, 2, 3, 4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}};
-extern int sum_diagonal(int array[4][4]);
+    int n;
+    std::cout << "Enter the number of persons: ";
+    std::cin >> n;
 
-cout << "The sum of the diagonals are =  " << sum_diagonal (array)<< endl;
+    Person* personArray = createPersonArray(n);
+
+    std::cout << "Created an array of " << n << " persons with default values:" << std::endl;
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Person " << i + 1 << ": Name = " << personArray[i].name << ", Age = " << personArray[i].age << std::endl;
+    }
+
+    delete[] personArray;
+
     return 0;
 }
