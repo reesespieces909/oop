@@ -1,20 +1,27 @@
 #include <iostream>
-#include "Person.h"
-#include "function-1-2.cpp"
+#include "Store.h"
 
 int main() {
-    int n;
-    std::cout << "Enter the number of persons: ";
-    std::cin >> n;
+    
+    Store store(10);
 
-    PersonList personList = createPersonList(n);
+    
+    StockItem item1(101, "Widget");
+    StockItem item2(102, "Hammer");
+    StockItem item3(101, "Widget");
 
-    std::cout << "Created a PersonList with " << personList.numPeople << " people:" << std::endl;
-    for (int i = 0; i < personList.numPeople; ++i) {
-        std::cout << "Person " << i + 1 << ": Name = " << personList.people[i].name << ", Age = " << personList.people[i].age << std::endl;
+    store.add_Stock(item1);
+    store.add_Stock(item2);
+    store.add_Stock(item3);
+
+    
+    std::cout << "Total Stock Count: " << store.get_Total_Stock_Count() << std::endl;
+    std::cout << "Widget Count: " << store.get_Stock_Count(101) << std::endl;
+
+    StockItem* stockList = store.get_Stock_List();
+    for (int i = 0; i < store.get_Total_Stock_Count(); ++i) {
+        std::cout << "Item Code: " << stockList[i].get_item_code() << ", Description: " << stockList[i].get_description() << std::endl;
     }
-
-    delete[] personList.people;
 
     return 0;
 }

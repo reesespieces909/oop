@@ -1,20 +1,16 @@
 #include <iostream>
-#include "Person.h"
-#include "function-1-1.cpp"
+#include "StockItem.h"
 
 int main() {
-    int n;
-    std::cout << "Enter the number of persons: ";
-    std::cin >> n;
+    
+    StockItem defaultItem;
+    std::cout << "Default Item Code: " << defaultItem.get_item_code() << std::endl;
+    std::cout << "Default Item Description: " << defaultItem.get_description() << std::endl;
 
-    Person* personArray = createPersonArray(n);
-
-    std::cout << "Created an array of " << n << " persons with default values:" << std::endl;
-    for (int i = 0; i < n; ++i) {
-        std::cout << "Person " << i + 1 << ": Name = " << personArray[i].name << ", Age = " << personArray[i].age << std::endl;
-    }
-
-    delete[] personArray;
+    
+    StockItem item(123, "Sample Item");
+    std::cout << "Item Code: " << item.get_item_code() << std::endl;
+    std::cout << "Item Description: " << item.get_description() << std::endl;
 
     return 0;
 }
