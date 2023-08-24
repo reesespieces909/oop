@@ -1,35 +1,27 @@
-#include <iostream>
-#include <iomanip>
-#include<string.h>
 #include "StockItem.h"
-using namespace std;
 
-Stock_item :: Stock_item() 
-{
-cout<<"Default constructor is called"<<endl;
-item_number=0; 
-description=" "; 
-  
-
+// Default constructor
+StockItem::StockItem() {
+    item_code = 0;
+    item_description = "";
 }
 
-Stock_item :: Stock_item(string description,int item_number) 
-{
-  
-this->item_number=item_number; 
-this->description=description;
+// Parameterized constructor
+StockItem::StockItem(int code_num, std::string description) {
+    item_code = code_num;
+    item_description = description;
 }
 
-string Stock_item::getDescription() 
-{
-return description;
+// Destructor
+StockItem::~StockItem() {
+    // You can add cleanup code here if needed
 }
-int Stock_item::getItem_Number() 
-{
-return item_number;
+
+std::string StockItem::get_description() {
+    return item_description;
 }
-Stock_item::~Stock_item() 
-{
-cout<<"Destructor is called"<<endl;
+
+int StockItem::get_item_code() {
+    return item_code;
 }
 

@@ -1,22 +1,20 @@
-#ifndef STOCK_ITEM_H
-#define STOCK_ITEM_H 
+#ifndef STOCKITEM_H
+#define STOCKITEM_H
 
-class Stock_item
-{
-private :
-int item_number;
-std::string description;
-public :
+#include <string>
 
-Stock_item();
+class StockItem {
+public:
+    StockItem();
+    StockItem(int code_num, std::string description);
+    ~StockItem();
 
-Stock_item(std::string description,int item_number);
+    std::string get_description();
+    int get_item_code();
 
-std::string getDescription();
-int getItem_Number();
-
-~Stock_item();
+private:
+    int item_code;
+    std::string item_description;
 };
 
-#endif
-
+#endif 
