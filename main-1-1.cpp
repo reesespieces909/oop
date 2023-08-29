@@ -1,16 +1,29 @@
 #include <iostream>
-#include "StockItem.h"
+#include "player.h"
+#include "wizard.h"
+#include "warrior.h"
+
+using namespace std;
 
 int main() {
-    
-    StockItem defaultItem;
-    std::cout << "Default Item Code: " << defaultItem.get_item_code() << std::endl;
-    std::cout << "Default Item Description: " << defaultItem.get_description() << std::endl;
+    Wizard wizard("Gandalf", 100, 20, 50);
+    Warrior warrior("Aragorn", 120, 25, "Sword");
 
-    
-    StockItem item(123, "Sample Item");
-    std::cout << "Item Code: " << item.get_item_code() << std::endl;
-    std::cout << "Item Description: " << item.get_description() << std::endl;
+    cout << "Let the battle begin!" << endl;
+
+    while (wizard.getHealth() > 0 && warrior.getHealth() > 0) {
+        wizard.castSpell(&warrior);
+
+        if (warrior.getHealth() > 0) {
+            warrior.swingWeapon(&wizard);
+        }
+    }
+
+    if (wizard.getHealth() > 0) {
+        cout << wizard.getName() << " wins!" << endl;
+    } else {
+        cout << warrior.getName() << " wins!" << endl;
+    }
 
     return 0;
 }
