@@ -1,16 +1,45 @@
 #include <iostream>
-#include "StockItem.h"
+#include <vector>
+#include "vehicle.h"
+#include "car.h"
+#include "bus.h"
+#include "motorbike.h"
 
 int main() {
-    
-    StockItem defaultItem;
-    std::cout << "Default Item Code: " << defaultItem.get_item_code() << std::endl;
-    std::cout << "Default Item Description: " << defaultItem.get_description() << std::endl;
+    std::vector<Vehicle*> vehicles;
 
-    
-    StockItem item(123, "Sample Item");
-    std::cout << "Item Code: " << item.get_item_code() << std::endl;
-    std::cout << "Item Description: " << item.get_description() << std::endl;
+    int numCars, numBuses, numMotorbikes;
+    std::cout << "Enter number of cars: ";
+    std::cin >> numCars;
+
+    std::cout << "Enter number of buses: ";
+    std::cin >> numBuses;
+
+    std::cout << "Enter number of motorbikes: ";
+    std::cin >> numMotorbikes;
+
+    for (int i = 0; i < numCars; ++i) {
+        vehicles.push_back(new Car(i + 1));
+    }
+
+    for (int i = 0; i < numBuses; ++i) {
+        vehicles.push_back(new Bus(i + 1));
+    }
+
+    for (int i = 0; i < numMotorbikes; ++i) {
+        vehicles.push_back(new Motorbike(i + 1));
+    }
+
+    for (const Vehicle* vehicle : vehicles) {
+        std::cout << "Vehicle ID: " << vehicle->getID()
+                  << " Parking Duration: " << vehicle->getParkingDuration() << " seconds"
+                  << std::endl;
+    }
+
+    // Clean up memory
+    for (Vehicle* vehicle : vehicles) {
+        delete vehicle;
+    }
 
     return 0;
 }
