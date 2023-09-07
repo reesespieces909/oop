@@ -1,17 +1,15 @@
 #include <iostream>
-using namespace std;
+#include "Fleet.h"
 
-int main(){
-    int array[] = {1,2,0,2,1};
-    int n = 5;
-    int case1;
-extern bool is_fanarray(int array[], int n);
-case1= is_fanarray(array, n);
+int main() {
+    Fleet myFleet;
+    Car** cars = myFleet.get_fleet();
 
-if (case1==1)
-cout << "True" << is_fanarray(array, n) << endl;
+    
+    for (int i = 0; i < 5; i++) {
+        std::cout << "Car " << i + 1 << ": ";
+        cars[i]->print(); 
+    }
 
-if (case1==0)
-cout << "False" << is_fanarray(array, n) << endl;
-return 0;
+    return 0;
 }
