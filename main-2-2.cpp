@@ -1,13 +1,18 @@
 #include <iostream>
+#include "Ford.h"
 
-using namespace std;
+int main() {
+    Ford ford(1234, 30000);
+    
+    std::cout << "Ford Badge Number: " << ford.get_badgeNumber() << std::endl;
+    std::cout << "Ford Price: " << ford.get_price() << std::endl;
+    std::cout << "Ford Litres of Fuel: " << ford.get_litresOfFuel() << "L" << std::endl;
+    
+    ford.refuel(20); 
+    std::cout << "Ford Litres of Fuel after refueling: " << ford.get_litresOfFuel() << "L" << std::endl;
 
-int main(){
-    int binary_digits;
-    int number_of_digits;
-int array[30] = {0,0,0,0,0,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,0,1,0,1,0,0,1,0,1,1}; 
-extern int bin_to_int(int binary_digits[], int number_of_digits);
-bin_to_int(array,30);
-cout << "" << bin_to_int (number_of_digits) << endl;
-return 0;
+    ford.drive(100); 
+    std::cout << "Ford Emissions after driving: " << ford.get_emissions() << "g CO2" << std::endl;
+
+    return 0;
 }
