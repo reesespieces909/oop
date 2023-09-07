@@ -29,13 +29,14 @@ void Tesla::set_batteryPercentage(float batteryPercentage) {
 }
 
 void Tesla::chargeBattery(int mins) {
-    float charge = mins * 0.5f / 60.0f; 
+    float charge = mins * 0.5f / 200.0f; 
     if (batteryPercentage + charge > MAX_BATTERY_PERCENTAGE) {
         batteryPercentage = MAX_BATTERY_PERCENTAGE;
     } else {
         batteryPercentage += charge;
     }
 }
+
 
 void Tesla::drive(int kms) {
     if (batteryPercentage <= 0.0f) {
