@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Tesla.h"
 
 const float Tesla::MAX_BATTERY_PERCENTAGE = 100.0f;

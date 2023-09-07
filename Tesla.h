@@ -14,15 +14,15 @@ public:
     void set_batteryPercentage(float batteryPercentage);
     
     void chargeBattery(int mins);
-    void drive(int kms) override;
+    void drive(int kms) override; 
 
-    virtual ~Tesla();  // Virtual destructor for proper polymorphism support
+    virtual ~Tesla();  
 
 private:
     char model;
-    float batteryPercentage;  // Initially 100%
+    float batteryPercentage;  
 
     static const float MAX_BATTERY_PERCENTAGE;
 };
 
-#endif // TESLA_H
+#endif 

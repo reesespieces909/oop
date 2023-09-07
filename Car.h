@@ -9,13 +9,13 @@ public:
     int get_price() const;
     int get_emissions() const;
     void set_price(int price);
-    void drive(int kms);
+    virtual void drive(int kms); // Declare as virtual
 
-    virtual ~Car();  
+    virtual ~Car(); // Virtual destructor for proper polymorphism support
 
-private:
+protected: // Change to protected access
     int price;
     int emissions;
 };
 
-#endif 
+#endif // CAR_H
