@@ -68,7 +68,7 @@ public:
             }
         }
 
-        std::cout << "Maxcycles  reached. Game over." << std::endl;
+        std::cout << "Maximum number of cycles reached. Game over." << std::endl;
     }
 };
 
