@@ -1,3 +1,6 @@
+#ifndef HELPER_H
+#define HELPER_H
+
 #include <tuple>
 #include <cmath>
 #include <cstdlib>
@@ -17,3 +20,5 @@ public:
         return std::sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
     }
 };
+
+#endif  // HELPER_H

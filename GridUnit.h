@@ -1,3 +1,6 @@
+#ifndef GRIDUNIT_H
+#define GRIDUNIT_H
+
 #include <tuple>
 
 class GridUnit {
@@ -6,11 +9,11 @@ private:
     char entity;
 
 public:
-    
+    // Constructors
     GridUnit() : coordinates(0, 0), entity(' ') {}
     GridUnit(int x, int y, char entity) : coordinates(x, y), entity(entity) {}
 
-    
+    // Member Functions
     std::tuple<int, int> getCoordinates() const {
         return coordinates;
     }
@@ -27,3 +30,5 @@ public:
         this->entity = entity;
     }
 };
+
+#endif  // GRIDUNIT_H
