@@ -4,16 +4,15 @@
 #include <tuple>
 
 class GridUnit {
-private:
+protected:
     std::tuple<int, int> coordinates;
     char entity;
 
 public:
-    
-    GridUnit() : coordinates(0, 0), entity(' ') {}
-    GridUnit(int x, int y, char entity) : coordinates(x, y), entity(entity) {}
+    GridUnit(int x, int y, char entity) : coordinates(std::make_tuple(x, y)), entity(entity) {}
 
-    
+    virtual ~GridUnit() {}  
+
     std::tuple<int, int> getCoordinates() const {
         return coordinates;
     }
@@ -32,3 +31,4 @@ public:
 };
 
 #endif  
+
