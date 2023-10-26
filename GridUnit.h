@@ -9,11 +9,11 @@ private:
     char entity;
 
 public:
-    // Constructors
+    
     GridUnit() : coordinates(0, 0), entity(' ') {}
     GridUnit(int x, int y, char entity) : coordinates(x, y), entity(entity) {}
 
-    // Member Functions
+    
     std::tuple<int, int> getCoordinates() const {
         return coordinates;
     }
@@ -31,4 +31,4 @@ public:
     }
 };
 
-#endif  // GRIDUNIT_H
+#endif  

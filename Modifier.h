@@ -8,4 +8,4 @@ public:
     virtual void apply(GridUnit& unit) = 0;
 };
 
-#endif  // MODIFIER_H
+#endif  
