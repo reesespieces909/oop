@@ -1,35 +1,25 @@
 #ifndef GAMESESSION_H
 #define GAMESESSION_H
 
-#include "GridUnit.h"
+#include "GridUnit.h" 
 #include "Avatar.h"
 #include "Obstacle.h"
 #include "Helper.h"
 #include <vector>
 #include <iostream>
-#include <cmath>
 
 class GameSession {
 private:
     std::vector<GridUnit*> grid;
 
 public:
-    GameSession() {
-        
-        for (int i = 0; i < 3; i++) {
-            grid.push_back(new Avatar(i, i));
-            grid.push_back(new Obstacle(i+1, i+1));
-        }
-    }
+    GameSession() {}
 
     std::vector<GridUnit*>& getGrid() {
         return grid;
     }
 
     void initGameSession(int numAvatars, int numObstacles, int gridWidth, int gridHeight) {
-        
-        grid.clear();
-
         for (int i = 0; i < numAvatars; i++) {
             auto [x, y] = Helper::generateRandomCoordinates(gridWidth, gridHeight);
             grid.push_back(new Avatar(x, y));
@@ -45,20 +35,26 @@ public:
         for (int cycle = 0; cycle < maxCycles; cycle++) {
             for (auto unit : grid) {
                 if (Avatar* avatar = dynamic_cast<Avatar*>(unit)) {
-                    int x, y;
-                    std::tie(x, y) = avatar->getCoordinates();
-                    avatar->setCoordinates(x + 1, y); 
+                    avatar->shift(1, 0);
+                    int avatarX, avatarY;
+                    std::tie(avatarX, avatarY) = avatar->getCoordinates();
+
+                    
+                    int gridWidth, gridHeight;
+                    std::tie(gridWidth, gridHeight) = Helper::generateRandomCoordinates(avatarX + 1, avatarY + 1);
+                    if (avatarX >= gridWidth) {
+                        std::cout << "Avatar has won the game!" << std::endl;
+                        return;
+                    }
 
                     
                     for (auto otherUnit : grid) {
                         if (Obstacle* obstacle = dynamic_cast<Obstacle*>(otherUnit)) {
-                            int ax, ay, ox, oy;
-                            std::tie(ax, ay) = avatar->getCoordinates();
-                            std::tie(ox, oy) = obstacle->getCoordinates();
-                            double distance = sqrt((ox - ax) * (ox - ax) + (oy - ay) * (oy - ay));
-
-                            if (distance <= obstacleActivationDistance) {
-                                obstacle->apply(*avatar);
+                            if (obstacle->isActive()) {
+                                auto distance = Helper::calculateDistance(avatar->getCoordinates(), obstacle->getCoordinates());
+                                if (distance <= obstacleActivationDistance) {
+                                    obstacle->apply(*avatar);
+                                }
                             }
                         }
                     }
