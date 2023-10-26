@@ -2,6 +2,7 @@
 #define GAMESESSION_H
 
 #include <vector>
+#include <iostream>  
 #include "GridUnit.h"
 #include "Avatar.h"
 #include "Obstacle.h"
@@ -67,7 +68,7 @@ public:
             }
         }
 
-        std::cout << "Max cycles. Game over. BooHooHooLOL" << std::endl;
+        std::cout << "Maxcycles  reached. Game over." << std::endl;
     }
 };
 
