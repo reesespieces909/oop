@@ -4,11 +4,11 @@
 #include "GridUnit.h"
 #include "Modifier.h"
 
-class Obstacle : public GridUnit {
+class Obstacle : public GridUnit, public Modifier {
 private:
     bool active;
 
-private:
+public:
     
     Obstacle(int x, int y) : GridUnit(x, y, 'O'), active(true) {}
 

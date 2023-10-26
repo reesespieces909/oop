@@ -6,11 +6,11 @@
 class Avatar : public GridUnit {
 public:
     
-    Avatar(int x, int y) : GridUnit(x, y, '') {}
+    Avatar(int x, int y) : GridUnit(x, y, 'A') {}
 
-    void shft (int dx, int dy) { 
+    
     void shift(int dx, int dy) {
-        int x, y; 
+        int x, y;
         std::tie(x, y) = getCoordinates();
         setCoordinates(x + dx, y + dy);
     }
